@@ -1,0 +1,98 @@
+	.version 1.4
+	.target sm_10, map_f64_to_f32
+	// compiled with /root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/open64/lib//be
+	// nvopencc 4.1 built on 2012-04-05
+
+	//-----------------------------------------------------------
+	// Compiling /tmp/tmpxft_00004438_00000000-9_constantbg.cpp3.i (/tmp/ccBI#.XRodnT)
+	//-----------------------------------------------------------
+
+	//-----------------------------------------------------------
+	// Options:
+	//-----------------------------------------------------------
+	//  Target:ptx, ISA:sm_10, Endian:little, Pointer Size:64
+	//  -O3	(Optimization level)
+	//  -g0	(Debug level)
+	//  -m2	(Report advisories)
+	//-----------------------------------------------------------
+
+	.file	1	"<command-line>"
+	.file	2	"/tmp/tmpxft_00004438_00000000-8_constantbg.cudafe2.gpu"
+	.file	3	"/root/sw/wsapps/raytracing/rtsdk/rel3.0/samples/cuda/constantbg.cu"
+	.file	4	"/root/sw/wsapps/raytracing/rtsdk/rel3.0/include/internal/optix_defines.h"
+	.file	5	"/root/sw/wsapps/raytracing/rtsdk/rel3.0/gcc44_static_build/bin/../lib/gcc/x86_64-unknown-linux-gnu/4.4.3/include/stddef.h"
+	.file	6	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/crt/device_runtime.h"
+	.file	7	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/host_defines.h"
+	.file	8	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/builtin_types.h"
+	.file	9	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/device_types.h"
+	.file	10	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/driver_types.h"
+	.file	11	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/surface_types.h"
+	.file	12	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/texture_types.h"
+	.file	13	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/vector_types.h"
+	.file	14	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/device_launch_parameters.h"
+	.file	15	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/crt/storage_class.h"
+	.file	16	"/root/sw/wsapps/raytracing/rtsdk/rel3.0/include/internal/optix_internal.h"
+	.file	17	"/root/sw/wsapps/raytracing/rtsdk/rel3.0/include/optix_device.h"
+	.file	18	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/common_functions.h"
+	.file	19	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/math_functions.h"
+	.file	20	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/math_constants.h"
+	.file	21	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/device_functions.h"
+	.file	22	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/sm_11_atomic_functions.h"
+	.file	23	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/sm_12_atomic_functions.h"
+	.file	24	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/sm_13_double_functions.h"
+	.file	25	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/sm_20_atomic_functions.h"
+	.file	26	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/sm_20_intrinsics.h"
+	.file	27	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/sm_30_intrinsics.h"
+	.file	28	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/surface_functions.h"
+	.file	29	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/texture_fetch_functions.h"
+	.file	30	"/root/sw/wsapps/buildtools/Linux/CUDA/4.2/rhel5.5/amd64/include/math_functions_dbl_ptx1.h"
+
+	.global .align 16 .b8 bg_color[12];
+	.global .align 16 .b8 prd_radiance[20];
+
+	.entry _Z4missv
+	{
+	.reg .f32 %f<5>;
+	.loc	3	35	0
+$LDWbegin__Z4missv:
+	ld.global.v4.f32 	{%f1,%f2,%f3,_}, [bg_color+0];
+	st.global.v2.f32 	[prd_radiance+0], {%f1,%f2};
+	.loc	3	37	0
+	st.global.f32 	[prd_radiance+8], %f3;
+	.loc	3	38	0
+	exit;
+$LDWend__Z4missv:
+	} // _Z4missv
+	.global .u64 _ZN21rti_internal_register20reg_bitness_detectorE;
+	.global .u64 _ZN21rti_internal_register24reg_exception_64_detail0E;
+	.global .u64 _ZN21rti_internal_register24reg_exception_64_detail1E;
+	.global .u64 _ZN21rti_internal_register24reg_exception_64_detail2E;
+	.global .u64 _ZN21rti_internal_register24reg_exception_64_detail3E;
+	.global .u64 _ZN21rti_internal_register24reg_exception_64_detail4E;
+	.global .u64 _ZN21rti_internal_register24reg_exception_64_detail5E;
+	.global .u64 _ZN21rti_internal_register24reg_exception_64_detail6E;
+	.global .u64 _ZN21rti_internal_register24reg_exception_64_detail7E;
+	.global .u64 _ZN21rti_internal_register24reg_exception_64_detail8E;
+	.global .u64 _ZN21rti_internal_register24reg_exception_64_detail9E;
+	.global .u32 _ZN21rti_internal_register21reg_exception_detail0E;
+	.global .u32 _ZN21rti_internal_register21reg_exception_detail1E;
+	.global .u32 _ZN21rti_internal_register21reg_exception_detail2E;
+	.global .u32 _ZN21rti_internal_register21reg_exception_detail3E;
+	.global .u32 _ZN21rti_internal_register21reg_exception_detail4E;
+	.global .u32 _ZN21rti_internal_register21reg_exception_detail5E;
+	.global .u32 _ZN21rti_internal_register21reg_exception_detail6E;
+	.global .u32 _ZN21rti_internal_register21reg_exception_detail7E;
+	.global .u32 _ZN21rti_internal_register21reg_exception_detail8E;
+	.global .u32 _ZN21rti_internal_register21reg_exception_detail9E;
+	.global .u32 _ZN21rti_internal_register14reg_rayIndex_xE;
+	.global .u32 _ZN21rti_internal_register14reg_rayIndex_yE;
+	.global .u32 _ZN21rti_internal_register14reg_rayIndex_zE;
+	.global .align 4 .b8 _ZN21rti_internal_typeinfo8bg_colorE[8] = {82,97,121,0,12,0,0,0};
+	.global .align 4 .b8 _ZN21rti_internal_typeinfo12prd_radianceE[8] = {82,97,121,0,20,0,0,0};
+	.global .align 1 .b8 _ZN21rti_internal_typename8bg_colorE[7] = {0x66,0x6c,0x6f,0x61,0x74,0x33,0x0};
+	.global .align 1 .b8 _ZN21rti_internal_typename12prd_radianceE[20] = {0x50,0x65,0x72,0x52,0x61,0x79,0x44,0x61,0x74,0x61,0x5f,0x72,0x61,0x64,0x69,0x61,0x6e,0x63,0x65,0x0};
+	.global .align 1 .b8 _ZN21rti_internal_semantic8bg_colorE[1] = {0x0};
+	.global .align 1 .b8 _ZN21rti_internal_semantic12prd_radianceE[10] = {0x72,0x74,0x50,0x61,0x79,0x6c,0x6f,0x61,0x64,0x0};
+	.global .align 1 .b8 _ZN23rti_internal_annotation8bg_colorE[1] = {0x0};
+	.global .align 1 .b8 _ZN23rti_internal_annotation12prd_radianceE[1] = {0x0};
+
